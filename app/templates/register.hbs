@@ -1,0 +1,28 @@
+<h2 class="title"><span>Registrarme</span></h2>
+<div class="tile is-ancestor box">
+  <form action="">
+    {{message}}
+    <div class="tile is-parent">
+      <label for="inputName">Nombre completo</label>
+      <input type="text" name="name" required="required">
+    </div>
+    <div class="tile is-parent">
+      <label for="inputEmail">Correo Electrónico</label>
+      <input class="input" type="email" placeholder="Email" name="email" required="required">
+    </div>
+    <div class="tile is-parent">
+      <label for="inputPassword">Contraseña</label>
+      <input class="input" type="password" placeholder="Password" name="password" required="required">
+    </div>
+    <div class="align-center">
+      <button id="registerButton" {{action 'register'}} class="button is-success"><span>REGISTRARME</span></button>
+      <hr>
+      <p>Si ya tienes una cuenta:</p>
+
+      {{#link-to 'login'}}
+        <button id="loginButton" class="button"><span>INICIAR SESIÓN</span></button>
+      {{/link-to}}
+
+    </div>
+  </form>
+</div>

@@ -1,5 +1,49 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
 
-{{outlet}}
+<body>
+  <section class="hero is-primary">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <img src="/assets/icons/logo.png" alt="Logo">
+            </a>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item"  href="/">Inicio</a>
+              {{#if session.user}}
+                <li class="menu__item">
+                  {{#link-to 'dashboard'}}
+                    {{session.info.fullName}}
+                  {{/link-to}}
+                </li>
+                <li class="menu__item">
+                  <a href='#' {{action 'logout'}}>Cerrar sesión</a>
+                </li>
+              {{else}}
+                {{#if (not (or isLoginPage isRegisterPage))}}
+                  <li class="menu__item"> 
+                    {{#link-to 'login'}}
+                      <button class="btn">Ingresar / Crear Cuenta</button>
+                    {{/link-to}}
+                  </li>
+                {{/if}}
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title logo">EVEA</h1>
+        <h1 class="subtitle">Dpto. Sistemas e Informática</h1>
+      </div>
+    </div>
+  </section>
+    
+  {{outlet}}
+
+</body>

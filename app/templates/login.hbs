@@ -1,0 +1,24 @@
+<h2 class="title">Iniciar <span>sesión</span></h2>
+<div class="tile is-ancestor">
+  <form>
+    <div class="tile is-child">
+      {{message}}
+    </div>
+    <div class="tile is-parent">
+      <label for="inputEmail">Correo Electrónico</label>
+      <input class="input" type="email" placeholder="Email" name="email" required="required">
+    </div>
+    <div class="tile is-parent">
+      <label for="inputPassword">Contraseña</label>
+      <input class="input" type="password" placeholder="Password" name="password" required="required">
+    </div>
+    <div class="tile is-parent">
+      <button id="loginButton" {{action 'login'}} class="button is-success"><span>INICIAR SESIÓN</span></button>
+      <hr>
+      <p>¿A&uacute;n no estas registrado?</p>
+      {{#link-to 'register'}}
+        <button id="registerButton" class="button"><span>REGISTRARME</span></button>
+      {{/link-to}}
+    </div>
+  </form>
+</div>
