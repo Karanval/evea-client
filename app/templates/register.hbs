@@ -1,28 +1,53 @@
-<h2 class="title"><span>Registrarme</span></h2>
-<div class="tile is-ancestor box">
-  <form action="">
-    {{message}}
-    <div class="tile is-parent">
-      <label for="inputName">Nombre completo</label>
-      <input type="text" name="name" required="required">
-    </div>
-    <div class="tile is-parent">
-      <label for="inputEmail">Correo Electrónico</label>
-      <input class="input" type="email" placeholder="Email" name="email" required="required">
-    </div>
-    <div class="tile is-parent">
-      <label for="inputPassword">Contraseña</label>
-      <input class="input" type="password" placeholder="Password" name="password" required="required">
-    </div>
-    <div class="align-center">
-      <button id="registerButton" {{action 'register'}} class="button is-success"><span>REGISTRARME</span></button>
-      <hr>
-      <p>Si ya tienes una cuenta:</p>
+<div class="has-text-centered">
+  <h2 class="title"><span>Registrarme</span></h2>
+  <div class="tile is-parent centered">
+    <form action="">
+      <div class="box">
+        <p class="help is-danger">
+          {{message}}
+        </p>
+        <div class="field">
+          <label class="label">Nombre</label>
+          <div class="control has-icons-left">
+            <input class="input" type="text" name="name" required>
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+        
+        <div class="field">
+          <label class="label">Correo Electrónico</label>
+          <div class="control has-icons-left">
+            <input class="input" type="email" name="email" required>
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
 
-      {{#link-to 'login'}}
-        <button id="loginButton" class="button"><span>INICIAR SESIÓN</span></button>
-      {{/link-to}}
+        <div class="field">
+          <label class="label">Contraseña</label>
+          <div class="control has-icons-left">
+            <input class="input" type="password" name="password" required>
+            <span class="icon is-small is-left">
+              <i class="fas fa-key"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="align-center">
+        <button id="registerButton" {{action "register"}} class="button is-success"><span>REGISTRARME</span></button>
+        
+        <hr>
 
-    </div>
-  </form>
+        <p class="label">Si ya tienes una cuenta:</p>
+        {{#link-to "login"}}
+          <button id="loginButton" class="button"><span>INICIAR SESIÓN</span></button>
+        {{/link-to}}
+
+      </div>
+    </form>
+  </div>
 </div>

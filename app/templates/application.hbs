@@ -2,7 +2,7 @@
 <body>
   <section class="hero is-primary">
     <div class="hero-head">
-      <nav class="navbar">
+      <nav class="navbar is-primary">
         <div class="container">
           <div class="navbar-brand">
             <a class="navbar-item" href="/">
@@ -11,13 +11,23 @@
           </div>
           <div id="navbarMenuHeroA" class="navbar-menu">
             <div class="navbar-end">
-              <a class="navbar-item"  href="/">Inicio</a>
-              {{#if session.user}}
+              <li class="navbar-item">
+                {{#link-to 'login'}}
+                  Login
+                {{/link-to}}
+              </li>
+              <li class="navbar-item">
+                {{#link-to 'register'}}
+                  Registrarme
+                {{/link-to}}
+              </li>
+              {{!-- {{#if session.user}}
                 <li class="menu__item">
                   {{#link-to 'dashboard'}}
                     {{session.info.fullName}}
                   {{/link-to}}
                 </li>
+              
                 <li class="menu__item">
                   <a href='#' {{action 'logout'}}>Cerrar sesión</a>
                 </li>
@@ -29,7 +39,7 @@
                     {{/link-to}}
                   </li>
                 {{/if}}
-              {{/if}}
+              {{/if}} --}}
             </div>
           </div>
         </div>

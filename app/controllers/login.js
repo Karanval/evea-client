@@ -2,9 +2,8 @@ import Controller from '@ember/controller';
 import {
   inject as service
 } from '@ember/service';
-import LoginValidations from './validations/login';
 
-export default Controller.extend(LoginValidations, {
+export default Controller.extend({
   userService: service('user'),
   session: service(),
 
