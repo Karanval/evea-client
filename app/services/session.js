@@ -36,14 +36,9 @@ export default Service.extend({
 
       this.get('userService').info(user.user_id)
         .then((userDetails) => {
+          console.log("INFO IN SESSION SERVICE");
           let fullNameArray = [];
-          let details = userDetails.details;
-
-          if (details) {
-            if (details.name) {
-              fullNameArray.push(details.name);
-            }
-          }
+          fullNameArray.push(user.name);
 
           if (fullNameArray.length === 0) {
             fullNameArray.push(user.email);

@@ -14,6 +14,7 @@ export default Service.extend(APIServiceMixin, {
     if (!userId) {
       userId = this.get('session.user.user_id');
     }
+    console.log(userId+" User ID");
 
     return this.getRequest(`/v1/user/${userId}/session`);
   },

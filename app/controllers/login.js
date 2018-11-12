@@ -17,20 +17,14 @@ export default Controller.extend({
         password: password
       };
 
-      this.send('loading');
-
       return this.get('userService').login(payload)
         .then((user) => {
+          console.log("Opening session");
           return this.get('session').open(user);
         })
         .then(() => {
-          var transition = this.get('transition');
-
-          if (transition) {
-            transition.retry();
-          } else {
-            this.transitionToRoute('dashboard');
-          }
+          console.log("TRANSITIONING");
+          this.transitionToRoute('dashboard');
         })
         .catch((error) => {
           if (error.responseJSON) {
