@@ -1,0 +1,48 @@
+<div class="has-text-centered">
+  <h3 class="title"><span>Crear Clase</span></h3>
+  <div class="tile is-parent centered">
+    <form action="">
+      <div class="box">
+        <p class="help is-danger">
+          {{message}}
+        </p>
+        <div class="field">
+          <label class="label">Nombre de la Clase</label>
+          <div class="control has-icons-left">
+            {{!-- <input class="input" type="text" value=name required> --}}
+            {{input class="input" value=name type="text" required=true}}
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+        
+        <div class="field">
+          <label class="label">Objetivos de la Clase</label>
+          <div class="control has-icons-left">
+            {{!-- <input class="input" type="text" value=name required> --}}
+            <td style="width: 396px; height: 99px;" valign="top">
+                    <p><textarea name="message" style="width: 432px; height: 102px;"></textarea></p></td>
+          </div>
+          </div>
+
+        <div class="field">
+          <label class="label">Descripcion de la clase</label>
+          <div class="control has-icons-left">
+            {{!-- <input class="input" type="text" value=name required> --}}
+              <td style="width: 396px; height: 99px;" valign="top">
+                    <p>
+                      <textarea name="message" style="width: 432px; height: 102px;">
+                    </textarea>
+                    </p>
+              </td>
+            </div>
+          </div>
+        </div>
+      <div class="align-center">
+        <button id="crearClaseButton" {{action "CREAR"}} class="button is-success"><span>CREAR CLASE</span></button>
+        <hr>
+      </div>
+    </form>
+  </div>
+</div>

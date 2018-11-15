@@ -1,0 +1,56 @@
+<div class="has-text-centered">
+  <h3 class="title"><span>Crear Tarea</span></h3>
+  <div class="tile is-parent centered">
+    <form action="">
+      <div class="box">
+        <p class="help is-danger">
+          {{message}}
+        </p>
+        <div class="field">
+          <label class="label">Nombre de la tarea</label>
+          <div class="control has-icons-left">
+            {{!-- <input class="input" type="text" value=name required> --}}
+            {{input class="input" value=name type="text" required=true}}
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+        
+        <div class="field">
+          <label class="label">instrucciones del formato</label>
+          <div class="control has-icons-left">
+            {{!-- <input class="input" type="text" value=name required> --}}
+            {{input class="td" type="text" style="width: 432px; height: 102px;"  required=true}}
+            
+                    {{!--<p><textarea name="message" style="width: 432px; height: 102px;"></textarea></p>--}}
+          </div>
+          </div>
+
+        <div class="field">
+          <label class="label">instrucciones de la tarea</label>
+          <div class="control has-icons-left">
+            {{!-- <input class="input" type="text" value=name required> --}}
+              <td style="width: 396px; height: 99px;" valign="top">
+                    <p>
+                      <textarea name="message" style="width: 432px; height: 102px;">
+                    </textarea>
+                    </p>
+              </td>
+            </div>
+          </div>
+          <div class="field">
+                <label class="label">Fecha y Hora de entrega</label>
+                <div class="control has-text-centered">
+                <input class="date" type="date" >
+                <input class="time" type="time">
+                </div>
+            </div>
+        </div>
+      <div class="align-center">
+        <button id="crearTareaButton" {{action "CREAR"}} class="button is-success"><span>CREAR TAREA</span></button>
+        <hr>
+      </div>
+    </form>
+  </div>
+</div>

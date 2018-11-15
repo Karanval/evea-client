@@ -21,6 +21,21 @@
                   Registrarme
                 {{/link-to}}
               </li> --}}
+              <li class="navbar-item"> 
+                    {{#link-to "crear-clase"}}
+                      crear-clase
+                    {{/link-to}}
+              </li>
+              <li class="navbar-item"> 
+                    {{#link-to "crear-tarea"}}
+                      crear-tarea
+                    {{/link-to}}
+              </li>
+              <li class="navbar-item"> 
+                    {{#link-to "lista-de-clases"}}
+                      mis clases
+                    {{/link-to}}
+              </li>
               {{#if session.user}}
                 <li class="navbar-item">
                   {{#link-to "dashboard"}}
@@ -53,7 +68,6 @@
       </div>
     </div>
   </section>
-    
   {{outlet}}
 
 </body>
