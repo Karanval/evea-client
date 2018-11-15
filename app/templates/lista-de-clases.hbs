@@ -1,23 +1,28 @@
 <div class="is-parent">
-  <h3 class="title"><span>Lista de Mis Clases</span></h3>
+  <h3 class="title"><span></span></h3>
   <div class="tile is-parent centered">
     <form action="">
       <div class="table">
             <div class="table">
-            <label class="label">Nombre de la tarea</label>
+            <label class="label">Lista de Mis Clases</label>
               <table>
                 <tr>
                   <td><strong>Curso</strong></td>
                   <td><strong>Horas</strong></td>
-                  <td><strong>Horario</strong></td>
+                  <td><strong>Docente</strong></td>
                 </tr>
                 <tr>
-                    <td>Dreamweaver</td>
+                    <td>Evaluacion y Auditoria de Sistemas</td>
                     <td>60</td>
-                    <td>16:00 - 20:00</td>
+                    <td>Ing. Villarroel Novillo</td>
                     </tr>
                 </table>
-        </div>          
+          </div>         
+          <div class="align-center">
+          <p class="label">¿Quieres unirte a un curso?</p>
+        <button id="anhadirCursoButton" {{action "anhadir"}} class="button is-success"><span>+</span></button>
+        <hr>
+      </div> 
       </div>
       </form>
       </div>
