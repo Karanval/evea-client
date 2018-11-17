@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('registro_estudiante');
   this.route('registro-docente');
   this.route('registro-estudiantes');
+  this.route('registro-institucion');
 });
 
 export default Router;
