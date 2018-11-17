@@ -1,73 +1,21 @@
-
-<body>
-  <section class="hero is-primary">
-    <div class="hero-head">
-      <nav class="navbar is-primary">
-        <div class="container">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-              <img src="/assets/icons/logo.png" alt="Logo">
-            </a>
-          </div>
-          <div id="navbarMenuHeroA" class="navbar-menu">
-            <div class="navbar-end">
-              {{!-- <li class="navbar-item">
-                {{#link-to "login"}}
-                  Login
-                {{/link-to}}
-              </li>
-              <li class="navbar-item">
-                {{#link-to "register"}}
-                  Registrarme
-                {{/link-to}}
-              </li> --}}
-              <li class="navbar-item"> 
-                    {{#link-to "crear-clase"}}
-                      crear-clase
-                    {{/link-to}}
-              </li>
-              <li class="navbar-item"> 
-                    {{#link-to "crear-tarea"}}
-                      crear-tarea
-                    {{/link-to}}
-              </li>
-              <li class="navbar-item"> 
-                    {{#link-to "lista-de-clases"}}
-                      mis clases
-                    {{/link-to}}
-              </li>
-              {{#if session.user}}
-                <li class="navbar-item">
-                  {{#link-to "dashboard"}}
-                    {{session.info.fullName}}
-                  {{/link-to}}
-                </li>
-              
-                <li class="navbar-item">
-                  <a href="#" {{action "logout"}}>Cerrar sesión</a>
-                </li>
-              {{else}}
-                {{#if (not (or isLoginPage isRegisterPage))}}
-                  <li class="navbar-item"> 
-                    {{#link-to "login"}}
-                      Ingresar / Crear Cuenta
-                    {{/link-to}}
-                  </li>
-                {{/if}}
-              {{/if}}
-            </div>
-          </div>
+{{!-- The following component displays Ember's default welcome message. --}}
+<div class="main-container">
+    <h1>Plataforma departamento Sistemas-Informatica</h1>
+    <div class="description">
+        <a href="/registro-estudiantes">Estudiante</a>
         </div>
-      </nav>
+    <hr>
+    <div class="description">
+        <a href ="/registro-docente">Docente</a>
     </div>
-
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <h1 class="title logo">EVEA</h1>
-        <h1 class="subtitle">Dpto. Sistemas e Informática</h1>
-      </div>
+    <hr>
+    <div class="description">
+        <a href ="/registro-institucion">Institucion</a>
     </div>
-  </section>
-  {{outlet}}
-
-</body>
+    <hr>
+   {{!-- <div class="description">
+        <a href="/registro">Registrarse</a>
+    </div>
+    <hr>--}}
+    {{outlet}}
+</div>

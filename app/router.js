@@ -7,12 +7,11 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('login');
-  this.route('register');
-  this.route('dashboard');
-  this.route('crear-clase');
-  this.route('crear-tarea');
-  this.route('lista-de-clases');
+  this.route('registro_estudiante');
+  this.route('registro-docente');
+  this.route('registro-estudiantes');
+  this.route('registro-institucion');
+  this.route('registros');
 });
 
 export default Router;
