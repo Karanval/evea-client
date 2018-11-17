@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('registro-docente');
   this.route('registro-estudiantes');
   this.route('registro-institucion');
+  this.route('registros');
 });
 
 export default Router;
