@@ -12,6 +12,12 @@ Router.map(function() {
   this.route('registro-estudiantes');
   this.route('registro-institucion');
   this.route('registros');
+  this.route('lista-de-clases');
+  this.route('login');
+  this.route('register');
+  this.route('dashboard');
+  this.route('crear-clase');
+  this.route('crear-tarea');
 });
 
 export default Router;
