@@ -63,3 +63,32 @@ h1{
   background-color: rgb(5, 172, 61);
   color: rgba(242, 242, 247, 0.87);
 }
+
+.side-menu{
+  position: absolute;
+  top: 5%;
+  width: 30vw;
+  height: 20vh;
+  background-color: rgb(148, 28, 74);
+  border: solid 10% rgb(0, 0, 0);
+}
+
+.side-menu a{
+  display: block;
+}
+
+.side-menu button{
+  background-color: rgb(148, 28, 74);
+  color: aliceblue;
+  text-align: center;
+  border: 0px;
+  position: relative;
+  left:10%;
+  font-size: 1em;
+}
+
+#menu{
+  background-color: rgba(79, 126, 255, 0.493);
+  font-size: 2vw;
+  border: 0px;
+}
