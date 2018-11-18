@@ -10,7 +10,7 @@ h1{
 }
 
 .main-container{
-  background-color: rgba(79, 126, 255, 0.493);
+  background-color:rgb(79, 126, 255);
 }
 
 .main-container h1{
@@ -73,7 +73,7 @@ h1{
   top: 0%;
   width: 20vw;
   height: 100vh;
-  background-color: rgb(79, 126, 255);
+  background-color: rgb(104, 142, 247);
   border: solid 10% rgb(0, 0, 0);
 }
 
@@ -82,7 +82,7 @@ h1{
 }
 
 .side-menu button{
-  background-color: rgb(79, 126, 255);
+  background-color: rgb(104, 142, 247);
   color: aliceblue;
   text-align: center;
   border: 0px;
@@ -96,6 +96,7 @@ h1{
   background-color: rgb(79, 126, 255);
   font-size: 2vw;
   border: 0px;
+  margin-right: 2%;
 }
 
 .menu-link{
