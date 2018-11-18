@@ -1,23 +1,21 @@
 {{!-- The following component displays Ember's default welcome message. --}}
 <div class="main-container">
+    <button id="menu" onclick="w3_open()"><strong>☰</strong></button>
     <h1>Plataforma departamento Sistemas-Informatica</h1>
     <div class="side-menu" style="display:none" id="mySidebar">
-        <button onclick="w3_close()">Close &times;</button>
-        <a href="/registro-estudiantes">Estudiante</a>
-        <a href ="/registro-docente">Docente</a>
-        <a href ="/registro-institucion">Institucion</a>
+        <button onclick="w3_close()">&times;</button>
+        <a class="menu-link" href="/registro-estudiantes">Estudiante</a>
+        <a class="menu-link" href ="/registro-docente">Docente</a>
+        <a class="menu-link" href ="/registro-institucion">Institucion</a>
     </div>
-    <button id="menu" onclick="w3_open()"><strong>☰</strong></button>
     <hr>
     {{outlet}}
 </div>
 <script>
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("menu").style.display = "none";
 }
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("menu").style.display = "block";
 }
 </script>

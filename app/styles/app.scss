@@ -13,6 +13,10 @@ h1{
   background-color: rgba(79, 126, 255, 0.493);
 }
 
+.main-container h1{
+  display: inline-block;
+}
+
 .description{
   text-align: center;
   color:rgb(3, 3, 51);
@@ -66,10 +70,10 @@ h1{
 
 .side-menu{
   position: absolute;
-  top: 5%;
-  width: 30vw;
-  height: 20vh;
-  background-color: rgb(148, 28, 74);
+  top: 0%;
+  width: 20vw;
+  height: 100vh;
+  background-color: rgb(79, 126, 255);
   border: solid 10% rgb(0, 0, 0);
 }
 
@@ -78,17 +82,39 @@ h1{
 }
 
 .side-menu button{
-  background-color: rgb(148, 28, 74);
+  background-color: rgb(79, 126, 255);
   color: aliceblue;
   text-align: center;
   border: 0px;
   position: relative;
-  left:10%;
-  font-size: 1em;
+  left:3%;
+  top:1%;
+  font-size: 3em;
 }
 
 #menu{
-  background-color: rgba(79, 126, 255, 0.493);
+  background-color: rgb(79, 126, 255);
   font-size: 2vw;
   border: 0px;
+}
+
+.menu-link{
+  font-size: 2em;
+  margin: 1em;
+}
+
+.menu-link:link{
+  	color:white;
+}
+
+.menu-link:visited{
+  color:white;
+}
+
+.menu-link:hover{
+  color:rgba(197, 197, 197, 0.938);
+}
+
+.menu-link:active{
+  color:rgb(245, 168, 52);
 }
