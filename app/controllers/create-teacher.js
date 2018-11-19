@@ -14,12 +14,9 @@ export default Controller.extend({
     makeProfessor: function() {
       var user_id = this.get('user_id');
       console.log("user_id+ "+ user_id);
+      console.log("email "+this.get('firstName'));
 
-      var payload = {
-        user_id: user_id
-      };
-
-      return this.get('userService').makeProf(payload)
+      return this.get('userService').makeProf(user_id)
       .then(() => {
         this.transitionToRoute('application');
       })

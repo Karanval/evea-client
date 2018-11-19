@@ -1,12 +1,16 @@
 {{!-- <p>{{getUsers}}</p> --}}
+<p class="title">Crea nuevos profesores</p>
 <ul class="tile is-ancestor is-vertical box">
-{{#each (await getUsers) as |elem|}}
-  <li class="tile is-parent is-vertical">
-    <form class="tile is-parent">
-      <p>{{elem.name}}</p>
-      {{input class="input tile is-child" value=elem.user_id  required=true type="hidden" name=user_id}}
-      <button class="button is-primary tile is-child" {{action "makeProfessor"}}>Hacer profesor</button>
-    </form>
-  </li>
-{{/each}}
+  {{#each (await getUsers) as |elem|}}
+    <li class="tile is-parent is-vertical">
+      <form class="tile is-parent">
+        <p class="tile is-child">{{elem.name}}</p>
+        <p class="tile is-child">{{elem.email}}</p>
+        {{!-- {{input value=email required=true valueBinding=elem.user_id}} --}}
+        {{input value="user_id"}}
+        <button class="button is-primary tile is-child" {{action "makeProfessor"}}>Hacer profesor</button>
+      </form>
+    </li>
+    <hr>
+  {{/each}}
 </ul>
