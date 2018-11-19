@@ -11,12 +11,10 @@ export default Controller.extend({
 
   actions: {
 
-    makeProfessor: function() {
-      var user_id = this.get('user_id');
-      console.log("user_id+ "+ user_id);
-      console.log("email "+this.get('firstName'));
+    makeProfessor: function(userId) {
+      console.log("user_id: "+ userId);
 
-      return this.get('userService').makeProf(user_id)
+      return this.get('userService').makeProf(userId)
       .then(() => {
         this.transitionToRoute('application');
       })

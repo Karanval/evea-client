@@ -8,7 +8,8 @@ module.exports = function(defaults) {
     icons: {
       'free-solid-svg-icons': [
         'key', 'envelope', 'user',
-        'puzzle-piece', 'book', 'cog'
+        'puzzle-piece', 'book', 'cog', 
+        'bullseye', 'book-open'
        ]}
     }
     // Add options here

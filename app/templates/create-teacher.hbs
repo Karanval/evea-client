@@ -1,5 +1,5 @@
 {{!-- <p>{{getUsers}}</p> --}}
-<p class="title">Crea nuevos profesores</p>
+<p class="title is-centered">Crea nuevos profesores</p>
 <ul class="tile is-ancestor is-vertical box">
   {{#each (await getUsers) as |elem|}}
     <li class="tile is-parent is-vertical">
@@ -7,8 +7,7 @@
         <p class="tile is-child">{{elem.name}}</p>
         <p class="tile is-child">{{elem.email}}</p>
         {{!-- {{input value=email required=true valueBinding=elem.user_id}} --}}
-        {{input value="user_id"}}
-        <button class="button is-primary tile is-child" {{action "makeProfessor"}}>Hacer profesor</button>
+        <button class="button is-primary tile is-child" {{action "makeProfessor" elem.user_id}}>Hacer profesor</button>
       </form>
     </li>
     <hr>

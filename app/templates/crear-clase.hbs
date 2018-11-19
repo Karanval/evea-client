@@ -9,10 +9,9 @@
         <div class="field">
           <label class="label">Nombre de la Clase</label>
           <div class="control has-icons-left">
-            {{!-- <input class="input" type="text" value=name required> --}}
-            {{input class="input" value=name type="text" required=true}}
+            {{input class="input" value=className type="text" required=true}}
             <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
+              {{fa-icon "book"}}
             </span>
           </div>
         </div>
@@ -20,27 +19,27 @@
         <div class="field">
           <label class="label">Objetivos de la Clase</label>
           <div class="control has-icons-left">
-            {{!-- <input class="input" type="text" value=name required> --}}
-            <td valign="top">
-              <p><textarea name="message"></textarea></p>
-            </td>
+            {{input class="input" value=objectives type="text" required=true}}
+            <span class="icon is-small is-left">
+              {{fa-icon "bullseye"}}
+            </span>
           </div>
           </div>
 
         <div class="field">
           <label class="label">Descripcion de la clase</label>
           <div class="control has-icons-left">
-            {{!-- <input class="input" type="text" value=name required> --}}
-            <td valign="top">
-              <p>
-                <textarea name="message"></textarea>
-              </p>
-            </td>
+            {{input class="input" value=description type="text" required=true}}
+            <span class="icon is-small is-left">
+              {{fa-icon "book-open"}}
+            </span>
           </div>
           </div>
         </div>
       <div class="align-center">
-        <button id="crearClaseButton" {{action "CREAR"}} class="button is-success"><span>CREAR CLASE</span></button>
+        <button id="crearClaseButton" {{action "crearClase"}} class="button is-success">
+          <span>CREAR CLASE</span>
+        </button>
         <hr>
       </div>
     </form>
