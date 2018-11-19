@@ -15,9 +15,10 @@ Router.map(function() {
   this.route('lista-de-clases');
   this.route('login');
   this.route('register');
-  this.route('dashboard');
+  this.route('create-teacher');
   this.route('crear-clase');
   this.route('crear-tarea');
+  this.route('create-teacher');
 });
 
 export default Router;

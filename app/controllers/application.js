@@ -23,5 +23,13 @@ export default Controller.extend({
     return roles.find((role) => {
       return role === 'admin';
     });
+  }),
+
+  isProfessor: computed('session.info.roles', function() {
+    let roles = this.get('session.info.roles') || [];
+
+    return roles.find((role) => {
+      return role === 'professor';
+    });
   })
 });

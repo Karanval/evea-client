@@ -1,0 +1,12 @@
+{{!-- <p>{{getUsers}}</p> --}}
+<ul class="tile is-ancestor is-vertical box">
+{{#each (await getUsers) as |elem|}}
+  <li class="tile is-parent is-vertical">
+    <form class="tile is-parent">
+      <p>{{elem.name}}</p>
+      {{input class="input tile is-child" value=elem.user_id  required=true type="hidden" name=user_id}}
+      <button class="button is-primary tile is-child" {{action "makeAdmin"}}>Hacer profesor</button>
+    </form>
+  </li>
+{{/each}}
+</ul>

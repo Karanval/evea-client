@@ -1,4 +1,105 @@
-{{!-- The following component displays Ember's default welcome message. --}}
+
+<body>
+  <section class="hero is-primary">
+    <div class="hero-head">
+      <nav class="navbar is-primary">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <img src="/assets/icons/logo.png" alt="Logo">
+            </a>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+              {{!-- <li class="navbar-item">
+                {{#link-to "login"}}
+                  Login
+                {{/link-to}}
+              </li>
+              <li class="navbar-item">
+                {{#link-to "register"}}
+                  Registrarme
+                {{/link-to}}
+              </li> --}}
+              {{#if session.user}}
+                <li class="navbar-item">
+                  {{#link-to "application"}}
+                    {{session.info.fullName}}
+                  {{/link-to}}
+                </li>
+              
+                <li class="navbar-item">
+                  <a href="#" {{action "logout"}}>Cerrar sesión</a>
+                </li>
+              {{else}}
+                {{#if (not (or isLoginPage isRegisterPage))}}
+                  <li class="navbar-item"> 
+                    {{#link-to "login"}}
+                      Ingresar / Crear Cuenta
+                    {{/link-to}}
+                  </li>
+                {{/if}}
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title logo">EVEA</h1>
+        <h1 class="subtitle">Dpto. Sistemas e Informática</h1>
+      </div>
+    </div>
+  </section>
+    {{#if session.user}}
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li>
+            <span class="icon is-small">
+              {{fa-icon "home"}}
+            </span>
+            <span>Clases</span>
+          </li>
+
+          {{#if isAdmin}}
+            <li>
+              {{#link-to "create-teacher"}}
+                <span class="icon is-small">
+                  {{fa-icon "puzzle-piece"}}
+                </span>
+                <span>Crear docente</span>
+              {{/link-to}}
+            </li>
+          {{/if}}
+          {{#if isProfessor}}
+            <li>
+              {{#link-to "crear-clase"}}
+                <span class="icon is-small">
+                  {{fa-icon "book"}}
+                  {{!-- <i class="fas fa-book" aria-hidden="true"></i> --}}
+                </span>
+                <span>Crear Clase</span>
+              {{/link-to}}
+            </li>
+          {{/if}}
+          <li class="is-active">
+            <a href="#">
+              <span class="icon is-small">
+                {{fa-icon "cog"}}
+                {{!-- <i class="fas fa-thumbs-up" aria-hidden="true"></i> --}}
+              </span>
+              <span>Configuración</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    {{/if}}
+  {{outlet}}
+
+</body>
+{{!-- The following component displays Ember's default welcome message.
 <div class="main-container">
     <button id="menu" onclick="w3_open()"><strong>☰</strong></button>
     <h1>Plataforma departamento Sistemas-Informatica</h1>
@@ -18,4 +119,4 @@ function w3_open() {
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
-</script>
+</script> --}}

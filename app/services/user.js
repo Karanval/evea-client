@@ -14,7 +14,6 @@ export default Service.extend(APIServiceMixin, {
     if (!userId) {
       userId = this.get('session.user.user_id');
     }
-    console.log(userId+" User ID");
 
     return this.getRequest(`/v1/user/${userId}/session`);
   },
@@ -22,4 +21,12 @@ export default Service.extend(APIServiceMixin, {
   register: function(payload) {
     return this.post('/v1/user', payload);
   },
+
+  getAll: function() {
+    return this.getRequest('/v1/user')
+  },
+
+  makeAdmin: function(id) {
+    return this.post(`/v1/makeAdmin/${id}`);
+  }
 });

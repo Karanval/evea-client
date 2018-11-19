@@ -11,7 +11,6 @@ export default Controller.extend({
     register: function() {
 
       var name = this.get('name');
-      console.log(this.get('name')+" <- name");
       var email = this.get('email');
       var password = this.get('password');
 
@@ -20,7 +19,6 @@ export default Controller.extend({
         email: email,
         password: password
       };
-      console.log("PAYLOAD: "+ JSON.stringify(payload));
 
       this.get('userService').register(payload)
         .then(() => {
@@ -30,7 +28,7 @@ export default Controller.extend({
           return this.get('session').open(user);
         })
         .then(() => {
-          this.transitionToRoute('dashboard');
+          this.transitionToRoute('application');
         })
         .catch((error) => {
           if (error.responseJSON) {

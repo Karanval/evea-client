@@ -33,10 +33,10 @@ export default Service.extend({
       if (!user) {
         return reject();
       }
+      console.log(JSON.stringify(user));
 
       this.get('userService').info(user.user_id)
         .then((userDetails) => {
-          console.log("INFO IN SESSION SERVICE");
           let fullNameArray = [];
           fullNameArray.push(user.name);
 
@@ -45,6 +45,7 @@ export default Service.extend({
           }
 
           userDetails.fullName = fullNameArray.join(' ');
+          userDetails.roles = user.roles;
           this.set('info', userDetails);
           resolve(user);
         })

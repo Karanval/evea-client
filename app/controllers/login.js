@@ -19,12 +19,10 @@ export default Controller.extend({
 
       return this.get('userService').login(payload)
         .then((user) => {
-          console.log("Opening session");
           return this.get('session').open(user);
         })
         .then(() => {
-          console.log("TRANSITIONING");
-          this.transitionToRoute('dashboard');
+          this.transitionToRoute('application');
         })
         .catch((error) => {
           if (error.responseJSON) {

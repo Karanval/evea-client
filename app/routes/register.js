@@ -8,7 +8,7 @@ export default Route.extend({
 
   beforeModel: function() {
     if (this.get('session').isOpen()) {
-      this.transitionTo('dashboard');
+      this.transitionTo('application');
     }
   },
 
