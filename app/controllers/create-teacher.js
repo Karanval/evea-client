@@ -11,15 +11,15 @@ export default Controller.extend({
 
   actions: {
 
-    makeAdmin: function() {
+    makeProfessor: function() {
       var user_id = this.get('user_id');
       console.log("user_id+ "+ user_id);
-      
+
       var payload = {
         user_id: user_id
       };
 
-      return this.get('userService').makeAdmin(payload)
+      return this.get('userService').makeProf(payload)
       .then(() => {
         this.transitionToRoute('application');
       })

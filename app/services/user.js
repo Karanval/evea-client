@@ -26,7 +26,7 @@ export default Service.extend(APIServiceMixin, {
     return this.getRequest('/v1/user')
   },
 
-  makeAdmin: function(id) {
-    return this.post(`/v1/makeAdmin/${id}`);
+  makeProf: function(id) {
+    return this.post(`/v1/makeProf/${id}`);
   }
 });
