@@ -3,9 +3,7 @@
   <div class="tile is-parent centered">
     <form action="">
       <div class="box">
-        <p class="help is-danger">
-          {{message}}
-        </p>
+        <p class="help is-danger">{{message}}</p>
         <div class="field">
           <label class="label">Nombre de la Clase</label>
           <div class="control has-icons-left">
@@ -24,7 +22,7 @@
               {{fa-icon "bullseye"}}
             </span>
           </div>
-          </div>
+        </div>
 
         <div class="field">
           <label class="label">Descripcion de la clase</label>
@@ -34,13 +32,24 @@
               {{fa-icon "book-open"}}
             </span>
           </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Docente</label>
+          <div class="control has-icons-left">
+            {{input class="input" value=professor type="text" required=true}}
+            <span class="icon is-small is-left">
+              {{fa-icon "user"}}
+            </span>
           </div>
         </div>
-      <div class="align-center">
-        <button id="crearClaseButton" {{action "crearClase"}} class="button is-success">
-          <span>CREAR CLASE</span>
-        </button>
-        <hr>
+
+        <div class="align-center">
+          <button id="crearClaseButton" {{action "crearClase"}} class="button is-dark">
+            <span>CREAR CLASE</span>
+          </button>
+          <hr>
+        </div>
       </div>
     </form>
   </div>

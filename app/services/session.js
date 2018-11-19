@@ -33,7 +33,6 @@ export default Service.extend({
       if (!user) {
         return reject();
       }
-      console.log(JSON.stringify(user));
 
       this.get('userService').info(user.user_id)
         .then((userDetails) => {

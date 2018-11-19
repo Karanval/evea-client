@@ -11,16 +11,6 @@
           </div>
           <div id="navbarMenuHeroA" class="navbar-menu">
             <div class="navbar-end">
-              {{!-- <li class="navbar-item">
-                {{#link-to "login"}}
-                  Login
-                {{/link-to}}
-              </li>
-              <li class="navbar-item">
-                {{#link-to "register"}}
-                  Registrarme
-                {{/link-to}}
-              </li> --}}
               {{#if session.user}}
                 <li class="navbar-item">
                   {{#link-to "application"}}
@@ -54,13 +44,15 @@
     </div>
   </section>
     {{#if session.user}}
-      <nav class="breadcrumb" aria-label="breadcrumbs">
+      <nav class="breadcrumb tile is-parent" aria-label="breadcrumbs">
         <ul>
           <li>
-            <span class="icon is-small">
-              {{fa-icon "home"}}
-            </span>
-            <span>Clases</span>
+            {{#link-to "lista-de-clases"}}
+              <span class="icon is-small">
+                {{fa-icon "stream"}}
+              </span>
+              <span>Clases</span>
+            {{/link-to}}
           </li>
 
           {{#if isAdmin}}

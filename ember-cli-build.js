@@ -9,7 +9,7 @@ module.exports = function(defaults) {
       'free-solid-svg-icons': [
         'key', 'envelope', 'user',
         'puzzle-piece', 'book', 'cog', 
-        'bullseye', 'book-open'
+        'bullseye', 'book-open', 'stream'
        ]}
     }
     // Add options here

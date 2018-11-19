@@ -1,30 +1,31 @@
-<div class="is-parent">
-  <h3 class="title"><span></span></h3>
-  <div class="tile is-parent centered">
-    <form action="">
-      <div class="table">
-        <div class="table">
-          <label class="label">Lista de Mis Clases</label>
-          <table>
-            <tr>
-              <td><strong>Curso</strong></td>
-              <td><strong>Horas</strong></td>
-              <td><strong>Docente</strong></td>
-            </tr>
-            <tr>
-              <td>Evaluacion y Auditoria de Sistemas</td>
-              <td>60</td>
-              <td>Ing. Villarroel Novillo</td>
-            </tr>
-          </table>
-        </div>         
-          <div class="align-center">
-          <p class="label">¿Quieres unirte a un curso?</p>
-          <button id="anhadirCursoButton" {{action "anhadir"}} class="button is-success"><span>+</span></button>
-          <hr>
-        </div> 
-      </div>
-    </form>
-  </div>
+
+<div class="has-text-centered">
+  <p class="title is-centered">Todas las clases</p>
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th>Nombre de Clase</th>
+        <th>Descripcicón</th>
+        <th>Objetivos</th>
+        <th>Docente</th>
+        <th>Unirse a clase</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each (await getClasses) as |class index|}}
+        <tr >
+          <td>{{class.name}}</td>
+          <td>{{class.description}}</td>
+          <td>{{class.objectives}}</td>
+          <td>{{class.professor}}</td>
+          <td>
+            <form class="tile">
+              {{input value=classCode class="input"}}
+              <button class="button" {{action "joinClass" class.class_id index}}>Unirse</button>
+            </form>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </div>
-{{outlet}}

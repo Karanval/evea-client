@@ -5,17 +5,18 @@ import {
 
 export default Controller.extend({
   classService: service('class'),
-  session: service(),
   actions: {
     crearClase: function() {
       let className = this.get('className');
       let objectives = this.get('objectives');
       let description = this.get('description');
+      let professor = this.get('professor');
 
       var payload = {
         name: className,
         objectives: objectives,
-        description: description
+        description: description,
+        professor_name: professor
       };
       console.log("Creating class: "+JSON.stringify(payload));
 
