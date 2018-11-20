@@ -11,19 +11,40 @@ export default Controller.extend({
   session: service(),
 
   actions: {
-    joinClass: function(classId, index) {
-      let user = this.get('session').fetch();
-      let value = 'classCode'+index;
-      let classCode= this.get(value);
-      console.log("value "+value);
-      console.log("code: "+classCode);
-      console.log("USER::: "+JSON.stringify(user));
+    joinClass: function(classId) {
+      let userId = this.get('session')._userFromLocalStorage().user_id;
+      let classCode= this.get('classCode');
+
+      let payload = {
+        code: classCode
+      }
+      return this.get('classService').joinClass(classId, userId, payload)
+      .then(() => {
+        this.transitionToRoute('lista-de-clases');
+      })
+      .catch((error) => {
+        if (error.responseJSON) {
+          this.set('message', error.responseJSON.message);
+        }
+      }).finally(() => {
+        this.send('finished');
+      });
+    },
+    see: function(classId) {
+      
     }
   },
   
   getClasses: computed(function() {
-    return this.get('classService').getAll().then(users => {
-      return users;
+    return this.get('classService').getAll().then(classes => {
+      return classes;
     } );
+  }),
+
+  getMyClasses: computed(function() {
+    let userId = this.get('session')._userFromLocalStorage().user_id;
+    return this.get('classService').getMyClasses(userId).then(classes => {
+      return classes;
+    })
   })
 });

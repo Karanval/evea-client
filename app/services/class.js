@@ -11,11 +11,15 @@ export default Service.extend(APIServiceMixin, {
     return this.getRequest('/v1/classes');
   },
 
+  getMyClasses: function (userId) {
+    return this.getRequest(`/v1/classes/${userId}`);
+  },
+
   createClass: function(payload) {
     return this.post('/v1/class', payload);
   },
 
-  joinClass: function(classId, userId) {
-    return this.post(`/signup/user/${userId}/class/${classId}`);
+  joinClass: function(classId, userId, payload) {
+    return this.post(`/v1/signup/user/${userId}/class/${classId}`, payload);
   }
 });

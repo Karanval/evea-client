@@ -1,5 +1,32 @@
 
 <div class="has-text-centered">
+  <p class="title is-centered">Mis clases</p>
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th>Nombre de Clase</th>
+        <th>Descripcicón</th>
+        <th>Objetivos</th>
+        <th>Docente</th>
+        <th>Unirse a clase</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each (await getMyClasses) as |class|}}
+        <tr >
+          <td>{{class.name}}</td>
+          <td>{{class.description}}</td>
+          <td>{{class.objectives}}</td>
+          <td>{{class.professor}}</td>
+          <td>
+            <button class="button" {{action "see" class.class_id}}>Ver</button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+<div class="has-text-centered">
   <p class="title is-centered">Todas las clases</p>
   <table class="table is-fullwidth">
     <thead>
@@ -12,17 +39,15 @@
       </tr>
     </thead>
     <tbody>
-      {{#each (await getClasses) as |class index|}}
+      {{#each (await getClasses) as |class|}}
         <tr >
           <td>{{class.name}}</td>
           <td>{{class.description}}</td>
           <td>{{class.objectives}}</td>
           <td>{{class.professor}}</td>
-          <td>
-            <form class="tile">
-              {{input value=classCode class="input"}}
-              <button class="button" {{action "joinClass" class.class_id index}}>Unirse</button>
-            </form>
+          <td class="tile">
+            {{input value=classCode class="input" placeholder="Código de clase"}}
+            <button class="button" {{action "joinClass" class.class_id}}>Unirse</button>
           </td>
         </tr>
       {{/each}}
