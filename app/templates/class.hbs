@@ -1,0 +1,36 @@
+{{await getClass}}
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <div class="tile is-parent is-vertical">
+      <span class="label">Nombre de la Clase:</span>
+      <p>{{subject.name}}</p>
+      <span class="label">Objectivos:</span>
+      <p>{{subject.objectives}}</p>
+      <span class="label">Descripción:</span>
+      <p>{{subject.description}}</p>
+    </div>
+    <div class="tile is-parent is-vertical">
+      <span class="label">Docente:</span>
+      <p>{{subject.professor_name}}</p>
+    </div>
+    <div class="tile is-parent is-vertical">
+      <span class="label">Opciones</span>
+      <a href="#" class="button">Ver Tareas</a><br>
+      {{#if isProfessor}}
+        <button {{action "createHW" class.class_id}} class="button is-fullwidth">Crear Tarea</button>
+      {{/if}}
+    </div>
+  </div>
+</div>
+{{!-- {
+  "class_id":3,
+  "name":"Entornos Virtuales de Aprendizaje",
+  "class_code":"ZNvFn",
+  "description":"Clases presenciales",
+  "objectives":"Aprender sobre EVAs",
+  "professor_name":"Ing. Villarroel Novillo",
+  "class_has_users":[{
+    "user_id":5,
+    "class_id":3
+  }]
+} --}}

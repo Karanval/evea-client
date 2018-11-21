@@ -9,7 +9,6 @@
         <div class="field">
           <label class="label">Nombre de la tarea</label>
           <div class="control has-icons-left">
-            {{!-- <input class="input" type="text" value=name required> --}}
             {{input class="input" value=name type="text" required=true}}
             <span class="icon is-small is-left">
               <i class="fas fa-user"></i>
@@ -17,38 +16,36 @@
           </div>
         </div>
         
-        <div class="field">
-          <label class="label">instrucciones del formato</label>
-            <div class="control has-icons-left">
-            <td valign="top">
-              <p>
-                <textarea name="message">
-              </textarea>
-              </p>
-            </td>
-            </div>
+        {{!-- <div class="field">
+        <label class="label">instrucciones del formato</label>
+          <div class="control has-icons-left">
+            {{input class="input" value=fInstructions type="text" required=true}}
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
           </div>
+        </div> --}}
         <div class="field">
           <label class="label">instrucciones de la tarea</label>
-            <div class="control has-icons-left">
-            <td valign="top">
-              <p>
-                <textarea name="message">
-              </textarea>
-              </p>
-            </td>
-            </div>
-          </div>
-          <div class="field">
-            <label class="label">Fecha y Hora de entrega</label>
-            <div class="control has-text-centered">
-              <input class="date" type="date" >
-              <input class="time" type="time">
-            </div>
+          <div class="control has-icons-left">
+            {{input class="input" value=hwInstructions type="text" required=true}}
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
           </div>
         </div>
+        <div class="field">
+          <label class="label">Fecha y Hora de entrega</label>
+          <div class="control has-text-centered">
+            {{input class="input" value=endDate type="datetime-local" required=true}}
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+      </div>
       <div class="align-center">
-        <button id="crearTareaButton" {{action "CREAR"}} class="button is-success"><span>CREAR TAREA</span></button>
+        <button id="crearTareaButton" {{action "createHW"}} class="button is-success"><span>CREAR TAREA</span></button>
         <hr>
       </div>
     </form>

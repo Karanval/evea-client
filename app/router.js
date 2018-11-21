@@ -19,6 +19,7 @@ Router.map(function() {
   this.route('crear-clase');
   this.route('crear-tarea');
   this.route('create-teacher');
+  this.route('class');
 });
 
 export default Router;

@@ -30,8 +30,9 @@ export default Controller.extend({
         this.send('finished');
       });
     },
+
     see: function(classId) {
-      
+      this.transitionToRoute('class', {queryParams: {classId: classId}});
     }
   },
   

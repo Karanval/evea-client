@@ -5,7 +5,7 @@
       <div class="box">
         <p class="help is-danger">{{message}}</p>
         <div class="field">
-          <label class="label">Nombre de la Clase</label>
+          <label class="label">Nombre de la Clase *</label>
           <div class="control has-icons-left">
             {{input class="input" value=className type="text" required=true}}
             <span class="icon is-small is-left">
@@ -45,7 +45,7 @@
         </div>
 
         <div class="align-center">
-          <button id="crearClaseButton" {{action "crearClase"}} class="button is-dark">
+          <button id="crearClaseButton" {{action "crearClase"}} class="button is-primary">
             <span>CREAR CLASE</span>
           </button>
           <hr>

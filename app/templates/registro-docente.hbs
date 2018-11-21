@@ -1,48 +1,87 @@
-<div class="secondary-container">
-  <h1>Registro Docentes</h1>
-  <div class="input-div">
-    <label>Nombre</label>
-    <input type="text" >
+<div class="tile is-ancestor has-text-centered">
+  <div class="tile is-parent is-vertical">
+    <h2 class="title"><span>Perfil Docente</span></h2>
+    <div class="tile box">
+      <div class="tile is-parent centered is-vertical">
+        <div class="field">
+          <label class="label">Nombre</label>
+          <div class="control has-icons-left">
+            {{!-- <input class="input" type="text" value=name required> --}}
+            {{input class="input" value=name type="text" required=true}}
+            <span class="icon is-small is-left">
+              {{fa-icon "user"}}
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Fecha de nacimiento</label>
+          <div class="control has-icons-left">
+            {{input class="input" value=birthDate type="date" required=true}}
+            <span class="icon is-small is-left">
+              {{fa-icon "user"}}
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control has-icons-left">
+            {{input class="input" value=birthDate type="email" required=true}}
+            <span class="icon is-small is-left">
+              {{fa-icon "user"}}
+            </span>
+          </div>
+        </div>
+        
+        <div class="field">
+          <label class="label">Nick</label>
+          <div class="control has-icons-left">
+            {{input class="input" value=birthDate type="text" required=true}}
+            <span class="icon is-small is-left">
+              {{fa-icon "user"}}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="tile is-parent centered is-vertical">
+        <div class="field">
+          <label class="label">Carrera</label>
+          <div class="control has-icons-left">
+            {{input class="input" value=birthDate type="text" required=true}}
+            <span class="icon is-small is-left">
+              {{fa-icon "user"}}
+            </span>
+          </div>
+        </div>
+        
+        <div class="field">
+          <label class="label">Área</label>
+          <div class="select control is-fullwidth">
+            
+            <select class="select" name="Area">
+              <option>Informatica</option>
+              <option> Sistemas</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Clase</label>
+          <div class="control has-icons-left">
+            {{input class="input" value=birthDate type="text" required=true}}
+            <span class="icon is-small is-left">
+              {{fa-icon "user"}}
+            </span>
+          </div>
+        </div><div class="field">
+          <label class="label">Objetivos de la clase</label>
+          <div class="control has-icons-left">
+            {{input class="input" value=birthDate type="text" required=true}}
+            <span class="icon is-small is-left">
+              {{fa-icon "user"}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="button is-primary">Guardar</button>
   </div>
-  <div class="input-div">
-    <label>Apellido</label>
-    <input type="text" >
-  </div>
-  <div class="input-div">
-    <label>Fecha Nacimiento</label>
-    <input type="date" >
-  </div>
-  <div class="input-div">
-    <label>E-mail</label>
-    <input type="text" >
-  </div>
-  <div class="input-div">
-    <label>Nick</label>
-    <input type="text" >
-  </div>
-  <div class="input-div">
-    <label>Carrera</label>
-    <input type="text" >
-  </div>
-  <div class="input-div">
-    <label>Institucion</label>
-    <input type="text" >
-  </div>
-  <div class="input-div">
-    <label>Area</label>
-    <select name="Area">
-      <option>Informatica</option>
-      <option> Sistemas</option>
-    </select>
-  </div>
-  <div class="input-div">
-    <label>Clase</label>
-    <input type="text" >
-  </div>
-  <div class="input-div">
-    <label>Objetivos de la clase</label>
-    <input type="text" >
-  </div>
-  <button class="form-button">Guardar</button>
-  {{outlet}}
 </div>

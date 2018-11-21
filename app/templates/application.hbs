@@ -1,8 +1,8 @@
 
 <body>
-  <section class="hero is-dark">
+  <section class="hero is-primary">
     <div class="hero-head">
-      <nav class="navbar is-dark">
+      <nav class="navbar is-primary">
         <div class="container">
           <div class="navbar-brand">
             <a class="navbar-item" href="/">
@@ -14,7 +14,7 @@
               {{#if session.user}}
                 <li class="navbar-item">
                   {{#link-to "application"}}
-                    {{session.info.fullName}}
+                    {{session.fetch.fullName}}
                   {{/link-to}}
                 </li>
               
@@ -76,14 +76,22 @@
               {{/link-to}}
             </li>
           {{/if}}
-          <li class="is-active">
-            <a href="#">
-              <span class="icon is-small">
-                {{fa-icon "cog"}}
-                {{!-- <i class="fas fa-thumbs-up" aria-hidden="true"></i> --}}
-              </span>
-              <span>Configuración</span>
-            </a>
+          <li>
+            {{#if isProfessor}}
+              {{#link-to "registro-docente"}}
+                <span class="icon is-small">
+                  {{fa-icon "cog"}}
+                </span>
+                <span>Configuración</span>
+              {{/link-to}}
+            {{else}}
+              {{#link-to "registro-estudiantes"}}
+                <span class="icon is-small">
+                  {{fa-icon "cog"}}
+                </span>
+                <span>Configuración</span>
+              {{/link-to}}
+            {{/if}}
           </li>
         </ul>
       </nav>

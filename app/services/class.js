@@ -21,5 +21,8 @@ export default Service.extend(APIServiceMixin, {
 
   joinClass: function(classId, userId, payload) {
     return this.post(`/v1/signup/user/${userId}/class/${classId}`, payload);
+  },
+  getClass: function(classId) {
+    return this.getRequest(`/v1/class/${classId}`);
   }
 });

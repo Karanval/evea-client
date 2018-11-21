@@ -17,9 +17,9 @@
           <td>{{class.name}}</td>
           <td>{{class.description}}</td>
           <td>{{class.objectives}}</td>
-          <td>{{class.professor}}</td>
+          <td>{{class.professor_name}}</td>
           <td>
-            <button class="button" {{action "see" class.class_id}}>Ver</button>
+            <button class="button is-fullwidth" {{action "see" class.class_id}}>Ver</button>
           </td>
         </tr>
       {{/each}}
@@ -44,7 +44,7 @@
           <td>{{class.name}}</td>
           <td>{{class.description}}</td>
           <td>{{class.objectives}}</td>
-          <td>{{class.professor}}</td>
+          <td>{{class.professor_namer}}</td>
           <td class="tile">
             {{input value=classCode class="input" placeholder="Código de clase"}}
             <button class="button" {{action "joinClass" class.class_id}}>Unirse</button>
