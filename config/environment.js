@@ -32,5 +32,9 @@ module.exports = function(environment) {
     ENV.APP.autoboot = false;
   }
 
+  if (environment === 'production') {
+    ENV.APP.API_HOST = 'https://evea-dsi.herokuapp.com';
+  }
+
   return ENV;
 };
